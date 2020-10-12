@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: ander
 # @Date:   2020-09-03 14:03:13
-# @Last Modified by:   ander
-# @Last Modified time: 2020-10-12 12:20:10
+# @Last Modified by:   Anderson
+# @Last Modified time: 2020-10-12 13:36:39
 import librosa
 import glob
 from moviepy.editor import CompositeAudioClip, AudioFileClip
@@ -20,6 +20,7 @@ for music in musics:
 	beat_times = list(librosa.frames_to_time(beats, sr=sr))
 	musics_beats.append((music, bpm, beat_times))
 
+# Sort musics by bpm from low to high.
 musics_beats.sort(key=lambda x: x[1])
 
 music_clips = []
@@ -29,6 +30,8 @@ for index, item in enumerate(musics_beats):
 	music, bpm, beat_times = item
 	clip_times.append((music, bpm, final_clip_time))
 	music_clip = AudioFileClip(music)
+
+	# Overlapping next music at the sixth from last beat time of previous music.
 	if index == 0:
 		music_clip = music_clip.set_start(final_clip_time)
 		final_clip_time += beat_times[-6]
