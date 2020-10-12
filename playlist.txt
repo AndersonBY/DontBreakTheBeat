@@ -1,0 +1,7 @@
+Time	BPM	Name
+0:00:00	75	sugi.wa - je t'aime.mp3
+0:01:02	80	Inteus - nostalgia.mp3
+0:02:55	83	Slushii - Thank You!.mp3
+0:05:07	83	Tomppabeats - Whenever It Rains, I Feel so Free.mp3
+0:06:04	86	Clocks Forward.mp3
+0:08:12	89	aimless - how it feels to love you.mp3
